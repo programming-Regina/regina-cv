@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regina N. Molares : Home</title>
+    <link rel="icon" type="img/png" href="img/favicon.png">
+    <script src="https://kit.fontawesome.com/f2652a0a74.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+
+    <base target="_blank">
+</head>
+
+<body>
+    <div id="greet">
+
+        <!-- NAV BAR -->
+        <nav class="navbar fixed-bottom navbar-expand-lg d-flex justify-content-between">
+            <span>
+                <h2 class="navbar-brand"><a href="#greet" target="_self"><i class="fas fa-at mr-1"></i> regina</a></h2>
+            </span>
+            <span class="text-right pr-2">
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item d-flex align-items-center">
+                            <i class="far fa-file"></i><a class="inf nav-link" role="button" href="#resume-section"
+                                target="_self" id="cv-btn" v-html="(english === true ? 'Resume' : 'CV')"></a>
+                        </li>
+                        <li class="nav-item active d-flex align-items-center">
+                            <i class="far fa-folder-open"></i><a class=" inf nav-link " role="button" href="#accordion"
+                                target="_self" id="portfolio-btn"
+                                v-html="(english === true ? 'Portfolio' : 'Trabajos')"></a>
+                        </li>
+                        <li class="nav-item d-flex align-items-center">
+                            <i class="far fa-envelope"></i><a class=" inf nav-link " role="button"
+                                href="#contact-section" target="_self"
+                                v-html="(english === true ? 'Contact Me!' : 'Contacto')"></a>
+                        </li>
+                        <li class="nav-item d-flex align-items-center">
+                            <i class="fas fa-globe"></i><a class="inf nav-link" role="button"
+                                v-html="(english === true ? 'Español' : 'English')" target="_self"
+                                @click="toggle_lng()"></a>
+                        </li>
+                    </ul>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </span>
+        </nav>
+        <!-- Fin NAV BAR -->
+
+
+
+
+
+
+        <!-- RESUME 
+        <section id="resume-section">
+
+            <div onclick="show_me('about-content')" class="resume-card box-shadow-1  text-center " id="about-card">
+                <h2><i class="fas fa-chalkboard-teacher ml-1"></i></h2>
+                <h3 class="resume-card-title" v-html="(english === true ? 'About Me' : 'Sobre mí')"></h3>
+
+            </div>
+
+            <div onclick="show_me('education-content')" class="resume-card box-shadow-1  text-center"
+                id="education-card">
+                <h2><i class="fas fa-graduation-cap  ml-1"></i></h2>
+                <h3 class="resume-card-title" v-html="(english === true ? 'Education' : 'Educación')"></h3>
+            </div>
+
+            <div onclick="show_me('skills-content')" class="resume-card box-shadow-1 text-center" id="skills-card">
+                <h2><i class="fas fa-glasses ml-1"></i></h2>
+                <h3 class="resume-card-title" v-html="(english === true ? 'Skills' : 'Habilidades')"></h3>
+            </div>
+
+            <div onclick="show_me('content-exp')" class="resume-card box-shadow-1 text-center" id="experience-card">
+                <h2><i class="fas fa-laptop-code ml-1"></i></h2>
+                <h3 class="resume-card-title" v-html="(english === true ? 'Experience' : 'Experiencia')"></h3>
+            </div>
+            <div class="text-center mt-1" id="bajarcv"><button type="button"
+                    class="submit-btn btn inf-inverso mb-1 bajarbtn"
+                    v-html="(english === true ? 'Download my Resume' : 'Descargar mi CV')"></button></div>
+        </section>
+
+
+        <section id="resume-contents">
+            <article class="resume-content box-shadow-1" id="about-content">
+                <template v-if="english">
+                    <h2 class="title"><i class="fas fa-chalkboard-teacher mr-1"></i> About Me</h2><br>
+                    <p>{{about_me}}</p>
+                </template>
+                <template v-else>
+                    <h2 class="title"><i class="fas fa-chalkboard-teacher mr-1"></i> Sobre mí</h2><br>
+                    <p>{{sobre_mi}}</p>
+                </template>
+            </article>
+            <article class="resume-content  box-shadow-1 " id="education-content">
+                <template v-if="english">
+                    <h2 class="title">Education</h2><br>
+                    <template v-for="item in education_en">
+                        <p class="mt-1"><small>{{ item[0] }} - {{ item[1] }}</small><br><b>{{ item[2] }}</b></p>
+                    </template>
+                </template>
+                <template v-else>
+                    <h2 class="title">Educación</h2><br>
+                    <template v-for="item in education_sp">
+                        <p class="mt-1"><small>{{ item[0] }} - {{ item[1] }}</small><br><b>{{ item[2] }}</b></p>
+                    </template>
+                </template>
+            </article>
+            <article class="resume-content  box-shadow-1" id="skills-content">
+                <template v-if="english">
+                    <h2 class="title">Skills</h2><br>
+                    <p v-for="skille in skills_en"><b>{{ skille[0] }}</b><br><small v-html="skille[1]"></small></p>
+                </template>
+                <template v-else>
+                    <h2 class="title">Habilidades</h2><br>
+                    <p v-for="skille in skills_sp"><b>{{ skille[0] }}</b><br><small v-html="skille[1]"></small></p>
+                </template>
+            </article>
+            <article class="resume-content box-shadow-1" id="content-exp">
+                <template v-if="english">
+                    <h2 class="title">Experience</h2><br>
+                    <p v-for="expe in experience_en"><small><b>{{ expe[0] }}</b></small><br><span
+                            v-html="expe[1]"></span>
+                </template>
+                <template v-else>
+                    <h2 class="title">Experiencia</h2><br>
+                    <p v-for="expe in experience_sp"><small><b>{{ expe[0] }}</b></small><br><span
+                            v-html="expe[1]"></span>
+                    </p>
+                </template>
+            </article>
+        </section>
+         FIN RESUME -->
+
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="scripts/vue.min.js"></script>
+
+    <script type="text/javascript" src="scripts/contenidos.js"></script>
+    <script type="text/javascript" src="scripts/my_script.js"></script>
+
+</body>
+
+</html>

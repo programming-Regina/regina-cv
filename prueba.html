@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regina N. Molares : Home</title>
+    <link rel="icon" type="img/png" href="img/favicon.png">
+    <script src="https://kit.fontawesome.com/f2652a0a74.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+
+    <base target="_blank">
+</head>
+
+<body>
+    <div id="greet">
+        <!-- NAV BAR -->
+        <nav class="navbar fixed-bottom navbar-expand-lg d-flex justify-content-between">
+            <span>
+                <h2 class="navbar-brand"><a href="#hello-section"><i class="fas fa-at"></i>regina</a></h2>
+            </span>
+
+            <span class="text-right">
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item d-flex align-items-center">
+                            <i class="far fa-file"></i><a class="inf nav-link" role="button" href="#resume-section"
+                                target="_self" id="cv-btn" v-html="(english === true ? 'Resume' : 'CV')"></a>
+
+                        </li>
+                        <li class="nav-item active d-flex align-items-center">
+                            <i class="far fa-folder-open"></i><a class=" inf nav-link " role="button" href="#accordion"
+                                target="_self" id="portfolio-btn"
+                                v-html="(english === true ? 'Portfolio' : 'Trabajos')"></a>
+
+                        </li>
+                        <li class="nav-item d-flex align-items-center">
+                            <i class="far fa-envelope"></i><a class=" inf nav-link " role="button"
+                                href="#contact-section" target="_self"
+                                v-html="(english === true ? 'Contact Me!' : 'Contacto')"></a>
+
+                        </li>
+                        <li class="nav-item d-flex align-items-center">
+                            <i class="fas fa-globe"></i><a class="inf nav-link" role="button" href="#"
+                                v-html="(english === true ? 'Español' : 'English')" target="_self"
+                                @click="toggle_lng()"></a>
+                        </li>
+                    </ul>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </span>
+
+        </nav>
+        <!-- Fin NAV BAR -->
+
+        <!-- HELLO WORLD! -->
+        <div class="container">
+            <section class="text-center" id="hello-section">
+                <div class="hello-animation">
+                    <!-- <div class="profile-pic"> <img id="hi" src="img/regina.jpg" alt="Regina"></div>  -->
+                    <h1 v-html="(english === true ? saludo_en : saludo_sp)"></h1>
+                    <div>
+                        <h2 class="mt-1" v-html="(english === true ? cargo_en : cargo_sp)"></h2>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+        <!-- Fin HELLO WORLD! -->
+
+        
+
+
+
+
+
+        <!-- PORTFOLIO -->
+        <div class="container">
+            <section id="portfolio-section"></section>
+        </div>
+        <!-- FIN PORTFOLIO -->
+
+
+
+        .
+    </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="scripts/vue.min.js"></script>
+
+    <script type="text/javascript" src="scripts/contenidos.js"></script>
+    </div>
+</body>
+
+</html>
