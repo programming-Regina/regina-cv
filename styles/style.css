@@ -55,7 +55,8 @@ a:hover {
     text-decoration: none;
 }
 
-.container, container2 {
+.container,
+container2 {
     width: 100vw;
     height: calc(100vh - 2.5rem);
     display: flex;
@@ -212,7 +213,11 @@ p {
     border: 1px solid var(--first-color);
     width: 100%;
 }
-#hello-section{align-self: center;}
+
+#hello-section {
+    align-self: center;
+}
+
 #contact-section {
     margin-top: .15rem;
     border: none;
@@ -280,7 +285,6 @@ nav {
 }
 
 .navbar {
-    
     border-top: solid thick var(--first-color);
 }
 
@@ -341,6 +345,10 @@ nav {
     margin-top: 1rem;
 }
 
+#cv-nav{
+    max-width: 100%;
+}
+
 @media screen and (min-width: 768px) {
     body {
         background-image: var(--bg-lg);
@@ -351,13 +359,13 @@ nav {
         grid-template-columns: repeat(2, 48%);
         justify-content: space-between;
     }
-
-    .container2 {
-        max-width: 80%;
+    
+    .container2  {    
+        max-width: 80%;    
         border-radius: 10px;
         margin: 0 auto;
-    }
-
+    }   
+   
     h1 {
         font-size: 5em;
     }
@@ -402,7 +410,6 @@ nav {
 
     .container2 {
         max-width: 60%;
-
     }
 
     #hello-section {
